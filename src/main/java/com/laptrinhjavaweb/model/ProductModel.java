@@ -12,6 +12,10 @@ public class ProductModel {
 	private boolean is_activated; // đang hoạt động
 	private boolean is_deleted; // đang được xóa
 
+
+	public ProductModel() {
+	}
+
 	public ProductModel(int productId, String productName, double salePrice, double costPrice, int quantity,
 			String description, int categoryId, String imageUrl, boolean is_activated, boolean is_deleted) {
 		super();

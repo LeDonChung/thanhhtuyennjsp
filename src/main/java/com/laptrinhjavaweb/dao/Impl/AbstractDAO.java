@@ -1,4 +1,4 @@
-package com.laptrinhjavaweb.dao.Impl;
+package com.laptrinhjavaweb.dao.impl;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

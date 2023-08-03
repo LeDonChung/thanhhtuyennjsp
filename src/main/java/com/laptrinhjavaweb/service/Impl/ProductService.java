@@ -4,31 +4,52 @@ import java.util.List;
 import javax.inject.Inject;
 
 import com.laptrinhjavaweb.dao.IProductDao;
+import com.laptrinhjavaweb.dao.impl.ProductDAO;
+import com.laptrinhjavaweb.model.CategoryModel;
 import com.laptrinhjavaweb.model.ProductModel;
 import com.laptrinhjavaweb.service.IProductService;
 
 public class ProductService implements IProductService{
-
+	
 	@Inject
-	private IProductDao productDao;
+	private ProductDAO productDAO;
 	
 	@Override
-	public List<ProductModel> findAll() {
+	public List<ProductModel> getAll() {
 		// TODO Auto-generated method stub
-		return productDao.findAll();
+		return productDAO.findAll();
 	}
 
 	@Override
 	public ProductModel insertOne(ProductModel product) {
 		// TODO Auto-generated method stub
-		return productDao.insertOne(product);
+		return productDAO.insertOne(product);
 	}
 
 	@Override
-	public int deleteOne(int productId) {
+	public ProductModel updateOne(ProductModel product) {
 		// TODO Auto-generated method stub
-		return productDao.deleteOne(productId);
+		return productDAO.updateOne(product);
 	}
+
+	@Override
+	public boolean enableById(int productId) {
+		// TODO Auto-generated method stub
+		return productDAO.enable(productId);
+	}
+
+	@Override
+	public boolean disableById(int productId) {
+		// TODO Auto-generated method stub
+		return productDAO.disable(productId);
+	}
+
+	@Override
+	public ProductModel findById(int productId) {
+		// TODO Auto-generated method stub
+		return productDAO.findById(productId);
+	}
+
 
 }
  
