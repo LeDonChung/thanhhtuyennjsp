@@ -18,11 +18,12 @@ public class CategoryModel {
 	public CategoryModel() {
 		// TODO Auto-generated constructor stub
 	}
-	public Integer getId() {
+	
+	public Integer getCategoryId() {
 		return categoryId;
 	}
-	public void setId(Integer id) {
-		this.categoryId = id;
+	public void setCategoryId(Integer categoryId) {
+		this.categoryId = categoryId;
 	}
 	public String getName() {
 		return name;
@@ -40,17 +41,19 @@ public class CategoryModel {
 	public String toString() {
 		return "Category [id=" + categoryId + ", name=" + name + ", code=" + code + "]";
 	}
-	public boolean isIs_deleted() {
-		return is_deleted;
-	}
-	public void setIs_deleted(boolean is_deleted) {
-		this.is_deleted = is_deleted;
-	}
 	public boolean isIs_activated() {
 		return is_activated;
 	}
 	public void setIs_activated(boolean is_activated) {
 		this.is_activated = is_activated;
 	}
+	public boolean isIs_deleted() {
+		return is_deleted;
+	}
+	public void setIs_deleted(boolean is_deleted) {
+		this.is_deleted = is_deleted;
+	}
+	
+	
 	
 }

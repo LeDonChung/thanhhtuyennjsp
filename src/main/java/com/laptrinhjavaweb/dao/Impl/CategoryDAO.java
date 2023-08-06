@@ -84,7 +84,7 @@ public class CategoryDAO extends AbstractDAO implements ICategoryDao {
 				rs = state.getGeneratedKeys();
 
 				while (rs.next()) {
-					category.setId(rs.getInt(1));
+					category.setCategoryId(rs.getInt(1));
 				}
 			} catch (SQLException e) {
 				e.printStackTrace();
@@ -133,7 +133,7 @@ public class CategoryDAO extends AbstractDAO implements ICategoryDao {
 				state = connect.prepareStatement(query);
 				state.setString(1, category.getName());
 				state.setString(2, category.getCode());
-				state.setInt(3, category.getId());
+				state.setInt(3, category.getCategoryId());
 				status = state.executeUpdate();
 			} catch (SQLException e) {
 				e.printStackTrace();

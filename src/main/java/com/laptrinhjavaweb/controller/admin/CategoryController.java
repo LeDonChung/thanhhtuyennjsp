@@ -27,13 +27,21 @@ public class CategoryController extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		RequestDispatcher rd = req.getRequestDispatcher("/views/admin/category.jsp");
+		List<CategoryModel> categories = categoryService.getAll();
+		req.setAttribute(SystemConstrants.CATEGORIES, categories);
+		req.setAttribute(SystemConstrants.TITLE, "Category Manager");
 		
-		//set title
-		req.setAttribute(SystemConstrants.TITLE, "Categories Admin");
-		
-		//lấy ra tất cả category
-		// List<CategoryModel> listCategory = categoryService.findAll();
-		// req.setAttribute(SystemConstrants.CATEGORIES, listCategory);
+		// Lấy message
+		String message = req.getParameter(SystemConstrants.MESSAGE);
+		if(message != null) {
+			if(message.equals("DELETE_CATEGORY_SUCCESS")) {
+				req.setAttribute("responseMessage", "Xóa thể loại thành công.");
+			} else if(message.equals("ENABLE_CATEGORY_SUCCESS")) {
+				req.setAttribute("responseMessage", "Bật thể loại thành công.");
+			} else if(message.equals("SOMETHING_WENT_WRONG")) {
+				req.setAttribute("responseMessage", "Đã xảy ra sự cố.");
+			}  
+		}
 		rd.forward(req, resp);
 	}
 
@@ -46,11 +54,11 @@ public class CategoryController extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-	}
+	} 
 
 	@Override
 	protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method stub 
 		super.doDelete(req, resp);
 	}
 }

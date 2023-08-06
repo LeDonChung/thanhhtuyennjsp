@@ -23,7 +23,7 @@ public class CategoryService implements ICategoryService {
 
 	@Override
 	public CategoryModel updateOne(CategoryModel category) {
-		if(category.getId() == null) {
+		if(category.getCategoryId() == null) {
 			return null;
 		}
 		return categoryDao.updateOne(category);

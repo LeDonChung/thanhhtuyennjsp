@@ -70,16 +70,16 @@ public class CategoryController extends HttpServlet {
 		if(enableParam != null) {
 			
 			CategoryModel model = HttpUtil.of(req.getReader()).toModel(CategoryModel.class);
-			categoryService.enableById(model.getId());
+			categoryService.enableById(model.getCategoryId());
 			ObjectMapper mapper = new ObjectMapper();
-			mapper.writeValue(resp.getOutputStream(), String.format("Khởi động thể loại có mã %d thành công", model.getId()));
+			mapper.writeValue(resp.getOutputStream(), String.format("Khởi động thể loại có mã %d thành công", model.getCategoryId()));
 		
 		} else if(disableParam != null) {
 			
 			CategoryModel model = HttpUtil.of(req.getReader()).toModel(CategoryModel.class);
-			categoryService.disableById(model.getId());
+			categoryService.disableById(model.getCategoryId());
 			ObjectMapper mapper = new ObjectMapper();
-			mapper.writeValue(resp.getOutputStream(), String.format("Xóa thể loại có mã %d thành công", model.getId()));
+			mapper.writeValue(resp.getOutputStream(), String.format("Xóa thể loại có mã %d thành công", model.getCategoryId()));
 		
 		} else {
 			

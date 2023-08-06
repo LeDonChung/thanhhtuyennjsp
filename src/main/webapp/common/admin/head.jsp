@@ -20,4 +20,6 @@
 <!-- End layout styles -->
 <link rel="shortcut icon"
 	href="<c:url value="/template/admin/images/favicon.ico"></c:url>" />
+	
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 </head>
